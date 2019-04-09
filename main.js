@@ -6,7 +6,7 @@ function startGame() {
 
 function playGame() {
   var humanChoice = prompt("What will it be? Rock, Paper or Scissors?");
-  return humanChoice.toLowerCase();
+  return humanChoice;
 }
 
 function compChoice() {
@@ -30,10 +30,37 @@ function humChoiceToNumber(humChoice) {
   return humNumb
 }
 
-function winner() {}
+function winner(humNumb, compNumb) {
 
+  if (humNumb == compNumb) {
+    alert("That was a tie")
+  }
 
+  else if ((compNumb == 0 && humNumb == 1) || (compNumb == 1 && humNumb == 2) || (compNumb == 2 && humNumb == 0)) {
+    alert("You won this round!")
+    humPoints ++;
+  }
+  else {
+    alert("The computer won this round")
+    compPoints ++
+  }
+  currentScore(humPoints, compPoints);
+}
+
+function currentScore(humPoints, compPoints) {
+  alert("The computer has " + compPoints + " and you have " + humPoints + "points")
+}
+
+function gameDuration() {
+  compPoints = 0
+  humPoints = 0
+
+  while (compPoints < 3 && humPoints < 3) {
+    winner(humChoiceToNumber(playGame()), compChoice());
+
+  }
+
+}
 
 startGame();
-humChoiceToNumber(playGame());
-compChoice();
+gameDuration();

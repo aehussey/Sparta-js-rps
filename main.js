@@ -6,13 +6,15 @@ function startGame() {
 
 function playGame() {
   var humanChoice = prompt("What will it be? Rock, Paper or Scissors?");
+    if (humanChoice != "rock" || humanChoice != "paper" || humanChoice != "scissors")
+    {var humanChoice = prompt("What will it be? Rock, Paper or Scissors? - Make sure you spell it correctly!");}
   return humanChoice;
 }
 
 function compChoice() {
   min = Math.ceil(0);
   max = Math.floor(3);
-  console.log(Math.floor(Math.random() * (3 - 0)) + 0);
+
   return Math.floor(Math.random() * (3 - 0)) + 0;
 
 }
@@ -26,7 +28,7 @@ function humChoiceToNumber(humChoice) {
     {humNumb = 1}
   else if (humChoice == "scissors")
     {humNumb = 2}
-    console.log(humNumb);
+
   return humNumb
 }
 
@@ -37,7 +39,7 @@ function winner(humNumb, compNumb) {
   }
 
   else if ((compNumb == 0 && humNumb == 1) || (compNumb == 1 && humNumb == 2) || (compNumb == 2 && humNumb == 0)) {
-    alert("You won this round!")
+    alert("Computer chose You won this round!")
     humPoints ++;
   }
   else {
@@ -48,7 +50,7 @@ function winner(humNumb, compNumb) {
 }
 
 function currentScore(humPoints, compPoints) {
-  alert("The computer has " + compPoints + " and you have " + humPoints + "points")
+  alert("The computer has " + compPoints + " and you have " + humPoints + " points")
 }
 
 function gameDuration() {

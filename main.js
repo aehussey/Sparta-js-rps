@@ -6,7 +6,7 @@ function startGame() {
 
 function playGame() {
   var humanChoice = prompt("What will it be? Rock, Paper or Scissors?");
-    if (humanChoice != "rock" && humanChoice != "paper" && humanChoice && "scissors")
+    if (humanChoice != "rock" && humanChoice != "paper" && humanChoice != "scissors")
     {var humanChoice = prompt("What will it be? Rock, Paper or Scissors? - Make sure you spell it correctly!");}
   return humanChoice;
 }
